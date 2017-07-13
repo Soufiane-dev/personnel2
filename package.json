@@ -1,0 +1,26 @@
+{
+  "name": "chatBot",
+  "description": "conversation Screendy",
+  "author":"imane Markhache",
+  "email":"imarkhache@gmail.com",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/assistantbot_Team/assistantBot"
+  },
+  "license": "private",
+  "dependencies": {
+    "watson-developer-cloud": "^2.8.1",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "dotenv": "^2.0.0"
+  },
+  "engines": {
+    "node": ">= 4.x.x",
+    "npm": "> 4.x.x"
+  }
+}
