@@ -1,32 +1,101 @@
 <html>
-<head>
-  <base href="/">
-  <title>CIH M3AK</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="stylesheet" href="css/app.css">
-</head>
-<body>
+    <head>
+        <title>CIH M3AK ChatBot</title>
 
-  <div id="contentParent" class="responsive-columns-wrapper">
-    <div id="chat-column-holder" class="responsive-column content-column">
-      <div id="header">
-        <h1>CIH M3AK</h1>
-      </div>
-      <div class="chat-column">
-        <div id="scrollingChat"></div>
-        <label for="textInput" class="inputOutline">
-          <input id="textInput" class="input responsive-column"
-            placeholder="Please type something..." type="text"
-            onkeydown="ConversationPanel.inputKeyDown(event, this)">
-        </label>
-      </div>
-    </div>
-  </div>
-<div></div>
-  <script src="js/common.js"></script>
-  <script src="js/api.js"></script>
-  <script src="js/conversation.js"></script>
-  <script src="js/global.js"></script>
+		<script type="text/javascript">
+			function isValid(){
+      var username = document.getElementById('username').value;
+			var password = document.getElementById('pswd').value;
+      if (username == "" || password == "")
+      {alert('Veuillez remplir tous les champs.'); return false;}
+			else if (password != "cihm3ak**2017")
+			{alert("Le nom d'utilisateur ou le mot de passe est incorrect."); return false;}
+      else return true;
+    }
+		</script>
+<style>
+form {
+    border: 0px solid #EF481C;
+}
+
+input[type=text], input[type=password] {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #E0E0E0;
+}
+
+button {
+    background-color: #05ADEE;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 15%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.imgcontainer {
+    text-align: center;
+    margin: 0px 0 12px 0;
+}
+
+img.avatar {
+    width: 20%;
+    border-radius: 50%;
+}
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+</style>
+    </head>
+<body>
+    <br>	<br>	<br>
+
+    <form method='GET' action="/login">
+
+		<div class="imgcontainer">
+		<img src="../img/bot.png" alt="Avatar" class="avatar">
+		</div>
+
+        <div class="container">
+
+          <label style = "color:#EF481C; padding-left:456px;"><b> Nom d'utilisateur: </b></label><br>
+    			<center><input type="text" placeholder="Entrer le nom d'utilisateur" id="username" name="username" required></center><br>
+
+    			<label style = "color:#EF481C; padding-left:456px;"><b>Mot de passe:</b></label><br>
+    			<center><input type="password" placeholder="Entrer le mot de passe" id="pswd" name="pswd" required><br></center><br>
+
+          <center><button type="submit" value="login" onclick="return isValid()">Se connecter</button></center>
+
+        </div>
+    </form>
 </body>
 </html>

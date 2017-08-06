@@ -1,13 +1,64 @@
 'use strict';
 
-var express = require('express'); // app server
+var express = require('express'),
+app = express(),
+    session = require('express-session');
+ // app server
 var bodyParser = require('body-parser'); // parser for post requests
 var Conversation = require('watson-developer-cloud/conversation/v1'); // watson sdk
 
-var app = express();
 
 app.use(express.static('./public'));
 app.use(bodyParser.json());
+app.use(session({
+    secret: '2C44-4D44-WppQ38S',
+    resave: true,
+    saveUninitialized: true
+}));
+
+//////////////////////////////index begin
+app.use(function(req, res, next) {
+  res.set('Cache-Control', 'no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0');
+  next();
+});
+
+
+// Authentication and Authorization Middleware
+var auth = function(req, res, next) {
+  if (req.session && req.session.user === "Cihm3ak" && req.session.admin)
+    return next();
+  else
+    return res.sendStatus(401);
+};
+
+
+
+// Login endpoint
+app.get('/login', function (req, res) {
+	var username = req.query.username;
+	var pswd = req.query.pswd;
+  if (!username || !pswd) {
+    res.send('login failed');
+  } else if(username === "Cihm3ak" && pswd === "cihm3ak**2017") {
+    req.session.user = username;
+    req.session.admin = true;
+    res.redirect('/conversation');
+  }
+});
+
+// Logout endpoint
+app.get('/logout', function (req, res) {
+  req.session.destroy();
+  res.sendFile(__dirname+"/public/logout.html");
+});
+
+// Get content endpoint
+app.get("/conversation", auth, function (request, response){
+    response.sendFile(__dirname+"/public/conversation.html");
+})
+
+//////////////////index end
+
 
 
 var conversation = new Conversation({

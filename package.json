@@ -1,8 +1,8 @@
 {
   "name": "chatBot",
-  "description": "conversation Screendy",
-  "author":"imane Markhache",
-  "email":"imarkhache@gmail.com",
+  "description": "Cih M3ak ChatBot",
+  "author":"khaoula tanfioui",
+  "email":"khaoulatanfioui@gmail.com",
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
