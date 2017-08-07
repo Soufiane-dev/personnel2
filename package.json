@@ -1,8 +1,8 @@
 {
   "name": "chatBot",
   "description": "Cih M3ak ChatBot",
-  "author":"khaoula tanfioui",
-  "email":"khaoulatanfioui@gmail.com",
+  "author": "khaoula tanfioui",
+  "email": "khaoulatanfioui@gmail.com",
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
@@ -14,10 +14,11 @@
   },
   "license": "private",
   "dependencies": {
-    "watson-developer-cloud": "^2.8.1",
     "body-parser": "^1.15.2",
+    "dotenv": "^2.0.0",
     "express": "^4.14.0",
-    "dotenv": "^2.0.0"
+    "express-session": "^1.15.5",
+    "watson-developer-cloud": "^2.8.1"
   },
   "engines": {
     "node": ">= 4.x.x",

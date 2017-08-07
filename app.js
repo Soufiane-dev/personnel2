@@ -49,7 +49,8 @@ app.get('/login', function (req, res) {
 // Logout endpoint
 app.get('/logout', function (req, res) {
   req.session.destroy();
-  res.sendFile(__dirname+"/public/logout.html");
+  //res.sendFile(__dirname+"/public/logout.html");
+  res.redirect('/');
 });
 
 // Get content endpoint
