@@ -19,7 +19,7 @@ form {
 }
 
 input[type=text], input[type=password] {
-    width: 30%;
+    width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -38,7 +38,7 @@ button {
     margin: 8px 0;
     border: none;
     cursor: pointer;
-    width: 15%;
+    width: 100%;
 }
 
 button:hover {
@@ -51,7 +51,7 @@ button:hover {
 }
 
 img.avatar {
-    width: 20%;
+    width: 30%;
     border-radius: 50%;
 }
 
@@ -87,10 +87,10 @@ span.psw {
 
         <div class="container">
 
-          <label style = "color:#EF481C; padding-left:456px;"><b> Nom d'utilisateur: </b></label><br>
+          <label style = "color:#EF481C;"><b> Nom d'utilisateur: </b></label><br>
     			<center><input type="text" placeholder="Entrer le nom d'utilisateur" id="username" name="username" required></center><br>
 
-    			<label style = "color:#EF481C; padding-left:456px;"><b>Mot de passe:</b></label><br>
+    			<label style = "color:#EF481C;"><b>Mot de passe:</b></label><br>
     			<center><input type="password" placeholder="Entrer le mot de passe" id="pswd" name="pswd" required><br></center><br>
 
           <center><button type="submit" value="login" onclick="return isValid()">Se connecter</button></center>
